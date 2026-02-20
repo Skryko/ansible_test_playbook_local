@@ -1,0 +1,11 @@
+---
+- name: Use role from collection
+  hosts: localhost
+  connection: local
+  gather_facts: false
+
+  roles:
+    - role: my_own_namespace.yandex_cloud_elk.create_text_file
+      vars:
+        create_text_file_path: /tmp/from_role.txt
+        create_text_file_content: "Created via role\n"
